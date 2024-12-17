@@ -19,6 +19,7 @@ function App() {
         </a>
       </header> */}
       <h1>Welcome to the Estate Agent Site</h1>
+      <h2>Client Side Web Application</h2>
     </div>
   );
 }
