@@ -1,7 +1,7 @@
 import React from 'react';
-import './Navbar.css'; // Make sure to create a CSS file for styling
+//import './Navbar.css'; // Make sure to create a CSS file for styling
 
-const Navbar = () => {
+function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar-logo">
