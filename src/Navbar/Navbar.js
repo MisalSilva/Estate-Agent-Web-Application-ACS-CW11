@@ -1,5 +1,5 @@
 import React from 'react';
-import NestHubLogo from './NestHubLogo.png'; // Make sure to import the logo
+import NestHubLogo1 from './NestHubLogo1.png'; // Make sure to import the logo
 //import './Navbar.css'; // Make sure to create a CSS file for styling
 
 function Navbar() {
@@ -7,7 +7,7 @@ function Navbar() {
         <nav className="navbar">
             <div className="navbar-logo">
             <a href="/">
-                    <img src={NestHubLogo} alt="NestHub Logo" />
+                    <img src={NestHubLogo1} alt="NestHub Logo" />
                 </a>
             </div>
             <ul className="navbar-links">
@@ -16,6 +16,10 @@ function Navbar() {
                 <li><a href="/services">Services</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
+            <div className="navbar-login">
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            </div>
         </nav>
     );
 };
