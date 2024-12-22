@@ -1,11 +1,14 @@
 import React from 'react';
+import NestHubLogo from './NestHubLogo.png'; // Make sure to import the logo
 //import './Navbar.css'; // Make sure to create a CSS file for styling
 
 function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar-logo">
-                <a href="/">Logo</a>
+            <a href="/">
+                    <img src={NestHubLogo} alt="NestHub Logo" />
+                </a>
             </div>
             <ul className="navbar-links">
                 <li><a href="/">Home</a></li>
