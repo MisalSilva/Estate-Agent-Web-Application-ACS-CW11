@@ -17,9 +17,9 @@ function Navbar() {
                 <li><a href="/about">Search Properties</a></li>
                 <li><a href="/">Favourites</a></li>
             </ul>
-            <div className="navbar-login">
-                <a href="/login">Login</a>
-                <a href="/register">Register</a>
+            <div className="login-register-buttons">
+                <a href="/login" className='login'>Login</a>
+                <a href="/register" className='register'>Register</a>
             </div>
         </nav>
     );
