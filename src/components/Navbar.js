@@ -1,5 +1,8 @@
 import React from 'react';
 import NestHubLogo1 from './NestHubLogo1.png'; // Make sure to import the logo
+import '../styles/Navbar.css';
+
+
 
 function Navbar() {
     return (
