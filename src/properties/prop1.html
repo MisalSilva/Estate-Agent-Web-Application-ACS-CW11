@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listing</title>
+    <link rel="stylesheet" href="../styles/prop1.css">
+</head>
+<body>
+    <div class="property-container">
+        <div class="property-images">
+            <img src="../assets/prop1pic1small.jpeg" class="main-image">
+            <div class="image-gallery">
+                <img src="images/prop1pic2.jpg" alt="Gallery Image 1">
+                <img src="images/prop1pic3.jpg" alt="Gallery Image 2">
+                <img src="images/prop1pic4.jpg" alt="Gallery Image 3">
+            </div>
+        </div>
+        <div class="property-details">
+            <h1>Petts Wood Road, Petts Wood, Orpington BR5</h1>
+            <p class="price">£750,000</p>
+            <p class="info">3 Bedrooms | Freehold</p>
+            <p class="description">
+                Attractive three-bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes, and National Trust woodland...
+                <span id="full-description" class="hidden"> The property comprises two receptions, a fitted kitchen/breakfast room, and a conservatory. Additional features include double glazing, gas central heating, and a well-presented interior.</span>
+            </p>
+            <button id="view-more-btn" class="view-more">View More</button>
+            <ul class="features">
+                <li>Double glazing</li>
+                <li>Gas central heating</li>
+                <li>Close to schools</li>
+                <li>Nearby National Trust woodland</li>
+            </ul>
+            <button class="call-agent">Call Agent</button>
+            <p class="added-date">Added: October 12, 2022</p>
+        </div>
+    </div>
+
+    <script>
+        const viewMoreBtn = document.getElementById('view-more-btn');
+        const fullDescription = document.getElementById('full-description');
+
+        viewMoreBtn.addEventListener('click', () => {
+            fullDescription.classList.toggle('hidden');
+            viewMoreBtn.textContent = fullDescription.classList.contains('hidden') ? 'View More' : 'View Less';
+        });
+    </script>
+</body>
+</html>
