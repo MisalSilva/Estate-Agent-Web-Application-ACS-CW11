@@ -3,35 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NESTHub - Property 1</title>
+    <title>NestHub - Property 1</title>
     <link rel="stylesheet" href="../styles/prop1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="property-container">
         <p class="back-button"><a href="/">Back to search results</a></p>
+        
+        <!-- Property Images Section -->
         <div class="property-images">
-            <img src="../assets/prop1pic1small.jpeg" class="main-image">
             <div class="image-gallery">
-                <img src="../assets/prop1pic2.jpeg" alt="Gallery Image 1">
-                <img src="../assets/prop1pic3.jpeg" alt="Gallery Image 2">
-                <img src="../assets/prop1pic4.jpeg" alt="Gallery Image 3">
-                <img src="../assets/prop1pic5.jpeg" alt="Gallery Image 4">
-                <img src="../assets/prop1pic6.jpeg" alt="Gallery Image 5">
-                <img src="../assets/prop1pic7.jpeg" alt="Gallery Image 6">
-                <img src="../assets/prop1pic8.jpeg" alt="Gallery Image 7">
-                <img src="../assets/prop1pic9.jpeg" alt="Gallery Image 8">
-
+                <!-- Main Display Photo -->
+                <div class="main-image-container">
+                    <img id="main-photo" src="../assets/prop1pic1small.jpeg" alt="Property Image 1">
+                </div>
+            
+                <!-- Thumbnail Photos -->
+                <div class="thumbnails">
+                    <div class="thumbnail" data-image="../assets/prop1pic1small.jpeg">
+                        <img src="../assets/prop1pic1small.jpeg" alt="Thumbnail 1">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop1pic2.jpeg">
+                        <img src="../assets/prop1pic2.jpeg" alt="Thumbnail 2">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop1pic3.jpeg">
+                        <img src="../assets/prop1pic3.jpeg" alt="Thumbnail 3">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop1pic4.jpeg">
+                        <img src="../assets/prop1pic4.jpeg" alt="Thumbnail 4">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop1pic5.jpeg">
+                        <img src="../assets/prop1pic5.jpeg" alt="Thumbnail 5">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop1pic6.jpeg">
+                        <img src="../assets/prop1pic6.jpeg" alt="Thumbnail 6">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop1pic7.jpeg">
+                        <img src="../assets/prop1pic7.jpeg" alt="Thumbnail 7">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop1pic8.jpeg">
+                        <img src="../assets/prop1pic8.jpeg" alt="Thumbnail 8">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop1pic9.jpeg">
+                        <img src="../assets/prop1pic9.jpeg" alt="Thumbnail 9">
+                    </div>
+                </div>
             </div>
+            
+        
+            <!-- Navigation Buttons -->
+            <button class="arrow-btn left-arrow" id="prev-photo"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow-btn right-arrow" id="next-photo"><i class="fas fa-chevron-right"></i></button>
         </div>
+        
+
+        <!-- Property Details Section -->
         <div class="property-details">
             <h1>Petts Wood Road, Petts Wood, Orpington BR5</h1>
-            <p class="price">£750,000</p>
-            <p class="info">3 Bedrooms | Freehold</p>
+            <div class="header-icons">
+                <p class="price">£750,000</p>
+                <button class="icon-btn share"><i class="fas fa-share"></i> Share</button>
+                <button class="icon-btn favourite"><i class="fas fa-heart"></i> Favourite</button>
+            </div>
+            <div class="icons-info">
+                <div><i class="fas fa-bed"></i> 3 Bedrooms</div>
+                <div><i class="fas fa-bath"></i> 2 Bathrooms</div>
+                <div><i class="fas fa-ruler-combined"></i> 1,200 sq ft</div>
+                <div><i class="fas fa-home"></i> Freehold</div>
+            </div>
             <p class="description">
                 Attractive three-bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes, and National Trust woodland...
                 <span id="full-description" class="hidden"> The property comprises two receptions, a fitted kitchen/breakfast room, and a conservatory. Additional features include double glazing, gas central heating, and a well-presented interior.</span>
             </p>
             <button id="view-more-btn" class="view-more">View More</button>
+
+            <!-- Features Section -->
             <ul class="features">
                 <li>Double glazing</li>
                 <li>Gas central heating</li>
@@ -41,9 +88,66 @@
             <button class="call-agent">Call Agent</button>
             <p class="added-date">Added: October 12, 2022</p>
         </div>
+
+        <!-- Map Section -->
+        <div class="property-map">
+            <h2>Location</h2>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2518.509284646881!2d0.07784581542538768!3d51.37572137960851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a8fba1796887%3A0xdfc52c8df7e2c13!2sPetts%20Wood%20Rd%2C%20Petts%20Wood%2C%20Orpington%20BR5%2C%20UK!5e0!3m2!1sen!2s!4v1693334344017!5m2!1sen!2s" 
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"></iframe>
+        </div>
     </div>
 
+    <!-- SwiperJS Library -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
+        const mainPhoto = document.getElementById('main-photo');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const prevPhoto = document.getElementById('prev-photo');
+        const nextPhoto = document.getElementById('next-photo');
+
+        let currentIndex = 0;
+
+        // Update Main Photo
+        const updateMainPhoto = (index) => {
+            const selectedThumbnail = thumbnails[index];
+            const newImage = selectedThumbnail.getAttribute('data-image');
+            mainPhoto.src = newImage;
+
+            // Highlight Active Thumbnail
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === index);
+            });
+        };
+
+        // Thumbnail Click Event
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                currentIndex = index;
+                updateMainPhoto(index);
+            });
+        });
+
+        // Arrow Navigation
+        prevPhoto.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+            updateMainPhoto(currentIndex);
+        });
+
+        nextPhoto.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % thumbnails.length;
+            updateMainPhoto(currentIndex);
+        });
+
+        // Initialize with First Image
+        updateMainPhoto(currentIndex);
+
+
+
         const viewMoreBtn = document.getElementById('view-more-btn');
         const fullDescription = document.getElementById('full-description');
 
