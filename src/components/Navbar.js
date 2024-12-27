@@ -18,8 +18,8 @@ function Navbar() {
                 <li><a href="/">Favourites</a></li>
             </ul>
             <div className="login-register-buttons">
-                <a href="/login" className='login'>Login</a>
-                <a href="/register" className='register'>Register</a>
+                <a href="/login" className='login'>Sign Up</a>
+                {/* <a href="/register" className='register'>Register</a> */}
             </div>
         </nav>
     );
