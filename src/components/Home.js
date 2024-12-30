@@ -12,6 +12,12 @@ function Home() {
                 </p>
                 <button className="explore-button">Explore Now</button>
             </div>
+            <div className="search-content">
+                <p>Search properties, ensure it's upto your requirements and contact the agents</p>
+                {/* <input type="text" placeholder="Search for properties" />
+                <button className="search-button">Search</button> */}
+                <button className="explore-button">Search Now</button>                
+            </div>
         </div>
     );
 }
