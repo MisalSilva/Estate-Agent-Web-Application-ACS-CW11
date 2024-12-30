@@ -60,22 +60,20 @@ body {
     transform: scale(1.03);
 }
 
-/* Thumbnail Gallery on the Right */
+/* Thumbnail Gallery */
 .thumbnails {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    height: 100%;
-    overflow-y: auto;
-    max-height: 480px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    gap: 10px; /* Space between thumbnails */
+    max-height: 480px; /* Ensure it doesn't exceed the height of the main image */
+    overflow-y: auto; /* Scroll if the content overflows */
     scrollbar-width: thin;
     scrollbar-color: #cccccc transparent;
 }
 
-/* Thumbnail Styling */
 .thumbnail {
-    width: 80px;
-    height: 80px;
+    width: 120px; /* Increase size for better visibility */
+    height: 120px;
     border: 2px solid transparent;
     border-radius: 8px;
     overflow: hidden;
@@ -96,6 +94,7 @@ body {
 .thumbnail.active {
     border: 2px solid #0078d7;
 }
+
 
 /* Arrow Buttons */
 .arrow-btn {
