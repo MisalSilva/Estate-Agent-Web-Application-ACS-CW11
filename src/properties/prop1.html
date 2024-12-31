@@ -165,13 +165,16 @@
 
 
 
-        const viewMoreBtn = document.getElementById('view-more-btn');
+        document.getElementById('view-more-btn').addEventListener('click', function () {
         const fullDescription = document.getElementById('full-description');
-
-        viewMoreBtn.addEventListener('click', () => {
-            fullDescription.classList.toggle('hidden');
-            viewMoreBtn.textContent = fullDescription.classList.contains('hidden') ? 'View More' : 'View Less';
-        });
+        if (fullDescription.classList.contains('hidden')) {
+            fullDescription.classList.remove('hidden');
+            this.textContent = 'View Less';
+        } else {
+            fullDescription.classList.add('hidden');
+            this.textContent = 'View More';
+        }
+    });
     </script>
 </body>
 </html>
