@@ -87,7 +87,7 @@ body {
     color: #333;
 }
 
-.property-container {
+.property-container {  
     max-width: 1200px;
     margin: 30px auto;
     background: #fff;
@@ -99,6 +99,7 @@ body {
 
 /* Back Button */
 .back-button a {
+    padding-top: 60px;
     text-decoration: none;
     color: #0078d7;
     font-weight: bold;
