@@ -1,98 +1,120 @@
 /* General styles for the home container */
 .home {
+    position: relative;
+    background: url('/src/assets/real-estate-hero-bg-two.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(45deg, #5b03b9, #ac7901, #0260c4, #af0101);
-    background-size: 300% 300%;
     color: #fff;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
-    animation: gradientAnimation 10s ease infinite;
+    overflow: hidden;
 }
 
-/* Keyframes for gradient animation */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Inner content styling */
+/* Home content styling */
 .home-content {
     max-width: 600px;
-    background: rgba(212, 234, 14, 0.114);
-    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-/* Heading style */
-.home h1 {
-    font-size: 2.5rem;
+.home-content h1 {
+    font-size: 3rem;
     margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Paragraph styling */
-.home p {
+.home-content .highlight {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.home-content p {
     font-size: 1.2rem;
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 30px;
-    color: #e0e0e0;
 }
 
-/* Button styling */
 .explore-button {
-    display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 1rem;
     color: #fff;
-    background: linear-gradient(to bottom right, #2f035f, #036c72);
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: all 0.4s ease;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-.explore-button a {
-    color: #fff;
-    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .explore-button:hover {
-    background: linear-gradient(to bottom right, #036c72, #2f035f);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 105, 135, 0.6);
 }
 
-/* Space out the content sections */
-.home-content,
+/* Search content styling */
 .search-content {
-    margin-bottom: 20px; /* Adds spacing between sections */
-}
-
-.search-content {
+    margin-top: 80px;
     max-width: 600px;
-    padding: 20px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-align: center;
 }
 
+.search-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+}
+
+.search-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+.search-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    padding: 10px;
+    width: 70%;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 1rem;
+    background: #fff;
+    color: #333;
+}
+
+.search-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 105, 135, 0.6);
+}
