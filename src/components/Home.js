@@ -5,9 +5,9 @@ import '../styles/Home.css';
 const Home = () => {
     const navigate = useNavigate();
   
-    const handleButtonClick = () => {
-      navigate('/search'); 
-    };
+    // const handleButtonClick = () => {
+    //   navigate('/search'); 
+    // };
     
     return (
         <div className="home">
@@ -16,7 +16,7 @@ const Home = () => {
                 <p>
                     Simplify your estate management with transparency, speed , and accuracy.
                 </p>
-                <button className="explore-button" onClick={handleButtonClick}>
+                <button className="explore-button" onClick={() => navigate('/search')}>
                     Explore Now
                 </button>
             </div>
@@ -31,7 +31,7 @@ const Home = () => {
                         className="search-input" 
                         placeholder="Search for properties..."
                     />
-                    <button className="search-button" onClick={handleButtonClick}>
+                    <button className="search-button" onClick={() => navigate('/search')}>
                         Search Now
                     </button>
                 </div>
