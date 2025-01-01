@@ -2,9 +2,13 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Home.css';
 
-function Home() {
+const Home = () => {
     const navigate = useNavigate();
-
+  
+    const handleButtonClick = () => {
+      navigate('/search'); 
+    };
+    
     return (
         <div className="home">
             <div className="home-content">
@@ -12,7 +16,7 @@ function Home() {
                 <p>
                     Simplify your estate management with transparency, speed, and accuracy.
                 </p>
-                <button className="explore-button" onClick={() => navigate('/search')}>
+                <button className="explore-button" onClick={handleButtonClick}>
                     Explore Now
                 </button>
             </div>
@@ -27,7 +31,7 @@ function Home() {
                         className="search-input" 
                         placeholder="Search for properties..."
                     />
-                    <button className="search-button" onClick={() => navigate('/search')}>
+                    <button className="search-button" onClick={handleButtonClick}>
                         Search Now
                     </button>
                 </div>
