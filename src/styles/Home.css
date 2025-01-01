@@ -1,6 +1,7 @@
 /* General styles for the home container */
 .home {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -70,9 +71,28 @@
     letter-spacing: 1px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+.explore-button a {
+    color: #fff;
+    text-decoration: none;
+}
 
 .explore-button:hover {
     background: linear-gradient(to bottom right, #036c72, #2f035f);
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
+
+/* Space out the content sections */
+.home-content,
+.search-content {
+    margin-bottom: 20px; /* Adds spacing between sections */
+}
+
+.search-content {
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
