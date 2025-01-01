@@ -14,7 +14,7 @@ const Home = () => {
             <div className="home-content">
                 <h1>Welcome to <span className="highlight">NestHub</span></h1>
                 <p>
-                    Simplify your estate management with transparency, speed, and accuracy.
+                    Simplify your estate management with transparency, speed , and accuracy.
                 </p>
                 <button className="explore-button" onClick={handleButtonClick}>
                     Explore Now
