@@ -2,21 +2,34 @@ import React from 'react';
 import '../styles/Home.css';
 
 function Home() {
+    const scrollToSearchContent = () => {
+        document.querySelector('.search-content').scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
         <div className="home">
             <div className="home-content">
-                <h1>Welcome to NestHub</h1>
+                <h1>Welcome to <span className="highlight">NestHub</span></h1>
                 <p>
-                    Manage all your estate-related tasks efficiently and with ease. 
-                    Our system ensures transparency, speed, and accuracy in every step.
+                    Simplify your estate management with transparency, speed, and accuracy.
                 </p>
-                <button className="explore-button"><a href='search-content'>Explore Now</a></button>
+                <button className="explore-button" onClick={scrollToSearchContent}>
+                    Explore Now
+                </button>
             </div>
             <div className="search-content">
-                <p>Search properties, ensure it's upto your requirements and contact the agents</p>
-                {/* <input type="text" placeholder="Search for properties" />
-                <button className="search-button">Search</button> */}
-                <button className="search-button">Search Now</button>                
+                <h2>Find Your Ideal Property</h2>
+                <p>
+                    Discover properties that suit your requirements and connect with agents easily.
+                </p>
+                <div className="search-actions">
+                    <input 
+                        type="text" 
+                        className="search-input" 
+                        placeholder="Search for properties..."
+                    />
+                    <button className="search-button">Search Now</button>
+                </div>
             </div>
         </div>
     );
