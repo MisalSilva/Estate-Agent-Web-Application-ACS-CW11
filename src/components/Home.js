@@ -1,10 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Home.css';
 
 function Home() {
-    const scrollToSearchContent = () => {
-        document.querySelector('.search-content').scrollIntoView({ behavior: 'smooth' });
-    };
+    const navigate = useNavigate();
 
     return (
         <div className="home">
@@ -13,7 +12,7 @@ function Home() {
                 <p>
                     Simplify your estate management with transparency, speed, and accuracy.
                 </p>
-                <button className="explore-button" onClick={scrollToSearchContent}>
+                <button className="explore-button" onClick={() => navigate('/search')}>
                     Explore Now
                 </button>
             </div>
@@ -28,7 +27,9 @@ function Home() {
                         className="search-input" 
                         placeholder="Search for properties..."
                     />
-                    <button className="search-button">Search Now</button>
+                    <button className="search-button" onClick={() => navigate('/search')}>
+                        Search Now
+                    </button>
                 </div>
             </div>
         </div>
