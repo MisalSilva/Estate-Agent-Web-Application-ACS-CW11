@@ -84,6 +84,7 @@ const Search = () => {
             <label>
                 Price Range:
                 <input type="number" name="minPrice" placeholder="Min" onChange={handleChange} />
+                <br></br>
                 <input type="number" name="maxPrice" placeholder="Max" onChange={handleChange} />
             </label>
             <label>
