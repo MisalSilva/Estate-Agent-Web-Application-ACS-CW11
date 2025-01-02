@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import '../styles/Result.css';
 
 const Result = () => {
     const location = useLocation();
@@ -11,7 +12,7 @@ const Result = () => {
             {results.length > 0 ? (
                 results.map((property) => (
                     <div key={property.id}>
-                        <h3>{property.type}</h3>
+                        <h4>{property.type}</h4>
                         <p>Bedrooms: {property.bedrooms}</p>
                         <p>Bathrooms: {property.bathrooms}</p>
                         <p>Tenure: {property.tenure}</p>
