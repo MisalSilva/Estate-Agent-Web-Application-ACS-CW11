@@ -106,8 +106,14 @@ const Search = () => {
                 <input type="number" name="maxPrice" placeholder="Max" onChange={handleChange} />
             </label>
             <label>
-                Date Added:
-                <input type="date" name="dateAdded" onChange={handleChange} />
+                Recently Added:
+                <select name="recentAdded" onChange={handleChange}>
+                    <option value="anytime">Anytime</option>
+                    <option value="3days">Last 3 Days</option>
+                    <option value="7days">Last 7 Days</option>
+                    <option value="14days">Last 14 Days</option>
+                    <option value="1month">Last Month</option>
+                </select>
             </label>
             <button type="submit">Search</button>
         </form>
