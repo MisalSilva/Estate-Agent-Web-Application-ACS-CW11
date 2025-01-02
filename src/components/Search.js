@@ -61,8 +61,9 @@ const Search = () => {
             const matchesPrice =
                 (filters.minPrice ? property.price >= parseInt(filters.minPrice) : true) &&
                 (filters.maxPrice ? property.price <= parseInt(filters.maxPrice) : true);
-            const matchesDate = filters.dateAdded
-                ? new Date(property.added.year, property.added.month - 1, property.added.day) >= new Date(filters.dateAdded)
+            // Adjust the matchesDate filter logic
+            const matchesDate = filters.recentAdded !== 'anytime'
+                ? new Date(property.added.year, property.added.month - 1, property.added.day) >= calculateDateRange(filters.recentAdded)
                 : true;
 
             return matchesType && matchesBedrooms && matchesTenure && matchesLocation && matchesPrice && matchesDate;
