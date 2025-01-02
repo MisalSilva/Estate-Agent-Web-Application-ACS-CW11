@@ -83,10 +83,12 @@ const Search = () => {
                     <option value="flat">Flat</option>
                 </select>
             </label>
+            <br></br>
             <label>
                 Bedrooms:
                 <input type="number" name="bedrooms" onChange={handleChange} />
             </label>
+            <br></br>
             <label>
                 Tenure:
                 <select name="tenure" onChange={handleChange}>
@@ -95,16 +97,19 @@ const Search = () => {
                     <option value="leasehold">Leasehold</option>
                 </select>
             </label>
+            <br></br>
             <label>
                 Location:
                 <input type="text" name="location" onChange={handleChange} />
             </label>
+            <br></br>
             <label>
                 Price Range:
                 <input type="number" name="minPrice" placeholder="Min" onChange={handleChange} />
                 <br></br>
                 <input type="number" name="maxPrice" placeholder="Max" onChange={handleChange} />
             </label>
+            <br></br>
             <label>
                 Added to the site:
                 <select name="recentAdded" onChange={handleChange}>
@@ -115,6 +120,7 @@ const Search = () => {
                     <option value="1month">Last Month</option>
                 </select>
             </label>
+            <br></br>
             <button type="submit">Search</button>
         </form>
     );
