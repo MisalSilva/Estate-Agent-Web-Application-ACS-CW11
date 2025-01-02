@@ -1,10 +1,11 @@
 import React from 'react';
 import NestHubLogo1 from './NestHubLogo1.png'; // Make sure to import the logo
 import '../styles/Navbar.css';
-
-
+import { useNavigate } from 'react-router-dom';    
 
 function Navbar() {
+    const navigate = useNavigate();
+
     return (
         <nav className="navbar">
             <div className="navbar-logo">
