@@ -22,23 +22,6 @@ const Search = () => {
         setFilters({ ...filters, [name]: value });
     };
 
-    // Function to calculate the date range for recently added
-    const calculateDateRange = (recentAdded) => {
-        const today = new Date();
-        switch (recentAdded) {
-            case '3days':
-                return new Date(today.setDate(today.getDate() - 3));
-            case '7days':
-                return new Date(today.setDate(today.getDate() - 7));
-            case '14days':
-                return new Date(today.setDate(today.getDate() - 14));
-            case '1month':
-                return new Date(today.setMonth(today.getMonth() - 1));
-            default:
-                return null; // "anytime" doesn't filter by date
-        }
-    };
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -61,9 +44,8 @@ const Search = () => {
             const matchesPrice =
                 (filters.minPrice ? property.price >= parseInt(filters.minPrice) : true) &&
                 (filters.maxPrice ? property.price <= parseInt(filters.maxPrice) : true);
-            // Adjust the matchesDate filter logic
-            const matchesDate = filters.recentAdded !== 'anytime'
-                ? new Date(property.added.year, property.added.month - 1, property.added.day) >= calculateDateRange(filters.recentAdded)
+                const matchesDate = filters.dateAdded
+                ? new Date(property.added.year, property.added.month - 1, property.added.day) >= new Date(filters.dateAdded)
                 : true;
 
             return matchesType && matchesBedrooms && matchesTenure && matchesLocation && matchesPrice && matchesDate;
@@ -83,12 +65,12 @@ const Search = () => {
                     <option value="flat">Flat</option>
                 </select>
             </label>
-            <br></br>
+
             <label>
                 Bedrooms:
                 <input type="number" name="bedrooms" onChange={handleChange} />
             </label>
-            <br></br>
+
             <label>
                 Tenure:
                 <select name="tenure" onChange={handleChange}>
@@ -97,28 +79,26 @@ const Search = () => {
                     <option value="leasehold">Leasehold</option>
                 </select>
             </label>
-            <br></br>
+
             <label>
                 Location:
                 <input type="text" name="location" onChange={handleChange} />
             </label>
+
+            <div className="price-range">
+                <label>
+                    Min Price:
+                    <input type="number" name="minPrice" placeholder="Min" onChange={handleChange} />
+                </label>
+                <label>
+                    Max Price:
+                    <input type="number" name="maxPrice" placeholder="Max" onChange={handleChange} />
+                </label>
+            </div>
             <br></br>
             <label>
-                Price Range:
-                <input type="number" name="minPrice" placeholder="Min" onChange={handleChange} />
-                <br></br>
-                <input type="number" name="maxPrice" placeholder="Max" onChange={handleChange} />
-            </label>
-            <br></br>
-            <label>
-                Added to the site:
-                <select name="recentAdded" onChange={handleChange}>
-                    <option value="anytime">Anytime</option>
-                    <option value="3days">Last 3 Days</option>
-                    <option value="7days">Last 7 Days</option>
-                    <option value="14days">Last 14 Days</option>
-                    <option value="1month">Last Month</option>
-                </select>
+                Date Added:
+                <input type="date" name="dateAdded" onChange={handleChange} />
             </label>
             <br></br>
             <button type="submit">Search</button>
