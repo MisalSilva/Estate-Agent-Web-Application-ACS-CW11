@@ -4,10 +4,6 @@ import '../styles/Home.css';
 
 const Home = () => {
     const navigate = useNavigate();
-  
-    // const handleButtonClick = () => {
-    //   navigate('/search'); 
-    // };
     
     return (
         <div className="home">
