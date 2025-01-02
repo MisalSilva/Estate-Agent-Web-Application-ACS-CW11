@@ -14,7 +14,7 @@ function Navbar() {
                 </a>
             </div>
             <ul className="navbar-links">
-                <li><a href="/" >Home</a></li>
+                <li><a href="/" onClick={() => navigate('/')}>Home</a></li>
                 <li><a href="/search" onClick={() => navigate('/search')}>Search Properties</a></li>
                 <li><a href="/">Favourites</a></li>
             </ul>
