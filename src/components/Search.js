@@ -22,6 +22,23 @@ const Search = () => {
         setFilters({ ...filters, [name]: value });
     };
 
+    // Function to calculate the date range for recently added
+    const calculateDateRange = (recentAdded) => {
+        const today = new Date();
+        switch (recentAdded) {
+            case '3days':
+                return new Date(today.setDate(today.getDate() - 3));
+            case '7days':
+                return new Date(today.setDate(today.getDate() - 7));
+            case '14days':
+                return new Date(today.setDate(today.getDate() - 14));
+            case '1month':
+                return new Date(today.setMonth(today.getMonth() - 1));
+            default:
+                return null; // "anytime" doesn't filter by date
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
