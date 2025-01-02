@@ -14,7 +14,6 @@ const Result = () => {
                     <div key={property.id}>
                         <h4>{property.type}</h4>
                         <p>Bedrooms: {property.bedrooms}</p>
-                        <p>Bathrooms: {property.bathrooms}</p>
                         <p>Tenure: {property.tenure}</p>
                         <p>Location: {property.location}</p>
                         <p>Price: £{property.price}</p>
