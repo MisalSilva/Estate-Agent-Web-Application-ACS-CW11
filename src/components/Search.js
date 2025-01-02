@@ -56,53 +56,55 @@ const Search = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Type:
-                <select name="type" onChange={handleChange}>
-                    <option value="">Any</option>
-                    <option value="house">House</option>
-                    <option value="flat">Flat</option>
-                </select>
-            </label>
-
-            <label>
-                Bedrooms:
-                <input type="number" name="bedrooms" onChange={handleChange} />
-            </label>
-
-            <label>
-                Tenure:
-                <select name="tenure" onChange={handleChange}>
-                    <option value="">Any</option>
-                    <option value="freehold">Freehold</option>
-                    <option value="leasehold">Leasehold</option>
-                </select>
-            </label>
-
-            <label>
-                Location:
-                <input type="text" name="location" onChange={handleChange} />
-            </label>
-
-            <div className="price-range">
+        <div className='search-container'>
+            <form onSubmit={handleSubmit}>
                 <label>
-                    Min Price:
-                    <input type="number" name="minPrice" placeholder="Min" onChange={handleChange} />
+                    Type:
+                    <select name="type" onChange={handleChange}>
+                        <option value="">Any</option>
+                        <option value="house">House</option>
+                        <option value="flat">Flat</option>
+                    </select>
                 </label>
+
                 <label>
-                    Max Price:
-                    <input type="number" name="maxPrice" placeholder="Max" onChange={handleChange} />
+                    Bedrooms:
+                    <input type="number" name="bedrooms" onChange={handleChange} />
                 </label>
-            </div>
-            <br></br>
-            <label>
-                Date Added:
-                <input type="date" name="dateAdded" onChange={handleChange} />
-            </label>
-            <br></br>
-            <button type="submit">Search</button>
-        </form>
+
+                <label>
+                    Tenure:
+                    <select name="tenure" onChange={handleChange}>
+                        <option value="">Any</option>
+                        <option value="freehold">Freehold</option>
+                        <option value="leasehold">Leasehold</option>
+                    </select>
+                </label>
+
+                <label>
+                    Location:
+                    <input type="text" name="location" onChange={handleChange} />
+                </label>
+
+                <div className="price-range">
+                    <label>
+                        Min Price:
+                        <input type="number" name="minPrice" placeholder="Min" onChange={handleChange} />
+                    </label>
+                    <label>
+                        Max Price:
+                        <input type="number" name="maxPrice" placeholder="Max" onChange={handleChange} />
+                    </label>
+                </div>
+                <br></br>
+                <label>
+                    Date Added:
+                    <input type="date" name="dateAdded" onChange={handleChange} />
+                </label>
+                <br></br>
+                <button type="submit">Search</button>
+            </form>
+        </div>
     );
 };
 
