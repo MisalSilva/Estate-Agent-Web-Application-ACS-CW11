@@ -106,7 +106,7 @@ const Search = () => {
                 <input type="number" name="maxPrice" placeholder="Max" onChange={handleChange} />
             </label>
             <label>
-                Recently Added:
+                Added to the site:
                 <select name="recentAdded" onChange={handleChange}>
                     <option value="anytime">Anytime</option>
                     <option value="3days">Last 3 Days</option>
