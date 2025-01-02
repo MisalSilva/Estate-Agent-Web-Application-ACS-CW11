@@ -9,7 +9,7 @@ import Result from './components/Result';
 function App() {
     return (
         <Router>
-            {/* <Navbar /> */}
+            <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/search" element={<Search />} />
