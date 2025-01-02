@@ -7,7 +7,6 @@ const Search = () => {
     const [filters, setFilters] = useState({
         type: '',
         bedrooms: '',
-        bathrooms: '',
         tenure: '',
         location: '',
         minPrice: '',
