@@ -20,7 +20,6 @@ function Navbar() {
             </ul>
             <div className="login-register-buttons">
                 <a href="/login" className='login'>Sign Up</a>
-                {/* <a href="/register" className='register'>Register</a> */}
             </div>
         </nav>
     );
