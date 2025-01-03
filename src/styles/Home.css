@@ -1,7 +1,7 @@
 /* General styles for the home container */
 .home {
     position: relative;
-    background: url('/src/assets/real-estate-hero-bg-two.jpg') no-repeat center center/cover;
+    background: url('/src/assets/welcomepagebg.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
