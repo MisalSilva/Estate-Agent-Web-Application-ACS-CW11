@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Heart, HeartOff, Star } from 'lucide-react';
+import { Heart, HeartOff, Star, Trash2 } from 'lucide-react';
 import '../styles/Result.css';
 
 const Result = () => {
@@ -8,8 +8,8 @@ const Result = () => {
     const results = location.state?.results || [];
     const [favorites, setFavorites] = useState([]);
     const [showFavorites, setShowFavorites] = useState(false);
+    const [draggedProperty, setDraggedProperty] = useState(null);
 
-    // Load favorites from localStorage on component mount
     useEffect(() => {
         const savedFavorites = localStorage.getItem('propertyFavorites');
         if (savedFavorites) {
@@ -17,7 +17,6 @@ const Result = () => {
         }
     }, []);
 
-    // Save favorites to localStorage whenever they change
     useEffect(() => {
         localStorage.setItem('propertyFavorites', JSON.stringify(favorites));
     }, [favorites]);
@@ -31,6 +30,45 @@ const Result = () => {
                 return [...prevFavorites, property];
             }
         });
+    };
+
+    const clearFavorites = () => {
+        setFavorites([]);
+        localStorage.removeItem('propertyFavorites');
+    };
+
+    const handleDragStart = (e, property) => {
+        setDraggedProperty(property);
+        e.dataTransfer.setData('text/plain', property.id);
+        e.currentTarget.classList.add('dragging');
+    };
+
+    const handleDragEnd = (e) => {
+        e.currentTarget.classList.remove('dragging');
+        setDraggedProperty(null);
+    };
+
+    const handleDragOver = (e) => {
+        e.preventDefault();
+        const dropZone = e.currentTarget;
+        dropZone.classList.add('drag-over');
+    };
+
+    const handleDragLeave = (e) => {
+        e.currentTarget.classList.remove('drag-over');
+    };
+
+    const handleDrop = (e, action) => {
+        e.preventDefault();
+        e.currentTarget.classList.remove('drag-over');
+
+        if (!draggedProperty) return;
+
+        if (action === 'add-to-favorites' && !favorites.some(fav => fav.id === draggedProperty.id)) {
+            setFavorites(prev => [...prev, draggedProperty]);
+        } else if (action === 'remove-from-favorites' && favorites.some(fav => fav.id === draggedProperty.id)) {
+            setFavorites(prev => prev.filter(fav => fav.id !== draggedProperty.id));
+        }
     };
 
     const formatPrice = (price) => {
@@ -55,26 +93,51 @@ const Result = () => {
                 <h2 className="results-header">
                     {showFavorites ? 'Favorite Properties' : 'Search Results'}
                 </h2>
-                <button 
-                    className="toggle-favorites-btn"
-                    onClick={() => setShowFavorites(!showFavorites)}
-                >
+                <div className="header-buttons">
                     {showFavorites ? (
                         <>
-                            <HeartOff size={20} /> Show All Properties
+                            <button 
+                                className="clear-favorites-btn"
+                                onClick={clearFavorites}
+                            >
+                                <Trash2 size={20} /> Clear Favorites
+                            </button>
+                            <button 
+                                className="toggle-favorites-btn drop-zone"
+                                onClick={() => setShowFavorites(false)}
+                                onDragOver={handleDragOver}
+                                onDragLeave={handleDragLeave}
+                                onDrop={(e) => handleDrop(e, 'remove-from-favorites')}
+                            >
+                                <HeartOff size={20} /> 
+                                Drop here to remove from favorites
+                            </button>
                         </>
                     ) : (
-                        <>
-                            <Heart size={20} /> Show Favorites ({favorites.length})
-                        </>
+                        <button 
+                            className="toggle-favorites-btn drop-zone"
+                            onClick={() => setShowFavorites(true)}
+                            onDragOver={handleDragOver}
+                            onDragLeave={handleDragLeave}
+                            onDrop={(e) => handleDrop(e, 'add-to-favorites')}
+                        >
+                            <Heart size={20} /> 
+                            Drop here to add to favorites ({favorites.length})
+                        </button>
                     )}
-                </button>
+                </div>
             </div>
 
-            {displayProperties.length > 0 ? (
-                <div className="property-grid">
-                    {displayProperties.map((property) => (
-                        <div key={property.id} className="property-card">
+            <div className="property-grid">
+                {displayProperties.length > 0 ? (
+                    displayProperties.map((property) => (
+                        <div 
+                            key={property.id} 
+                            className="property-card"
+                            draggable
+                            onDragStart={(e) => handleDragStart(e, property)}
+                            onDragEnd={handleDragEnd}
+                        >
                             <div className="property-image">
                                 <img 
                                     src={property.picture} 
@@ -111,13 +174,13 @@ const Result = () => {
                                 </p>
                             </div>
                         </div>
-                    ))}
-                </div>
-            ) : (
-                <p className="no-results">
-                    {showFavorites ? 'No favorite properties yet.' : 'No properties found matching your criteria.'}
-                </p>
-            )}
+                    ))
+                ) : (
+                    <p className="no-results">
+                        {showFavorites ? 'No favorite properties yet.' : 'No properties found matching your criteria.'}
+                    </p>
+                )}
+            </div>
         </div>
     );
 };
