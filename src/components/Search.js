@@ -56,6 +56,7 @@ const Search = () => {
 
     return (
         <div className='search-container'>
+            <h2>Search your Property</h2>
             <form onSubmit={handleSubmit}>
                 <label>
                     Type:
