@@ -188,3 +188,114 @@
         justify-content: center;
     }
 }
+
+/* Drop zone styles */
+.drop-zone {
+    position: relative;
+    transition: all 0.2s ease;
+    min-width: 250px;
+}
+
+.drop-zone.drag-over {
+    transform: scale(1.05);
+    background-color: #3b82f6;
+    color: white;
+    box-shadow: 0 0 0 2px #3b82f6, 0 0 0 4px rgba(59, 130, 246, 0.3);
+}
+
+.drop-zone.drag-over::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    border: 2px dashed #3b82f6;
+    border-radius: 8px;
+    animation: pulse 1.5s infinite;
+}
+
+/* Property card drag state */
+.property-card {
+    cursor: grab;
+    position: relative;
+}
+
+.property-card.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+    transform: scale(0.95);
+    transition: all 0.2s ease;
+}
+
+.property-card::before {
+    content: 'Drag to add/remove from favorites';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.property-card:hover::before {
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive design updates */
+@media (max-width: 768px) {
+    .header-buttons {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .drop-zone {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .clear-favorites-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Clear favorites button */
+.clear-favorites-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    border: 2px solid #ef4444;
+    color: #ef4444;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.clear-favorites-btn:hover {
+    background-color: #ef4444;
+    color: white;
+}
