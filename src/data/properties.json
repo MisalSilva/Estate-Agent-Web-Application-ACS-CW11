@@ -67,16 +67,48 @@
         {
             "id":"prop5",
 			"type":"House",
-            "bedrooms":6,
-			"price":7950000,
-			"tenure":"Freehold",
-			"description":"The accommodation is laid out over four floors and the drawing room is particularly noteworthy being large enough to have a sitting area in front of a huge period fireplace, a bar area for guests and still have space for a grand piano. It also opens into the dining room so, combined, these rooms flow well for those who enjoy entertaining.",
-			"location":"Virginia Avenue, Virginia Water",
+            "bedrooms":5,
+			"price":3975000,
+			"tenure":"Leasehold",
+			"description":"A stunning luxury home built in 2019 with five bedrooms (ensuite), offering modern living, elegant reception rooms and ideal for entertaining on a grand scale.",
+			"location":"Monks Road, Virginia Water, GU25",
 			"picture":"/assets/prop5pic1small.jpeg",
 			"url":"properties/prop5.html",
             "added": {
-                "month":"December",
-                "day":26,
+                "month":"April",
+                "day":3,
+                "year":2024
+            }
+        },
+        {
+            "id":"prop6",
+			"type":"House",
+            "bedrooms":7,
+			"price":3250000,
+			"tenure":"Freehold",
+			"description":"Situated in the prestigious Kingswood estate on Woodland Way, this substantial detached family home offers a luxurious lifestyle for those seeking space and comfort.",
+			"location":"Woodland Way, Kingswood",
+			"picture":"/assets/prop6pic1small.jpeg",
+			"url":"properties/prop6.html",
+            "added": {
+                "month":"November",
+                "day":28,
+                "year":2024
+            }
+        },
+        {
+            "id":"prop7",
+			"type":"House",
+            "bedrooms":6,
+			"price":3395000,
+			"tenure":"Freehold",
+			"description":"A superb six bedroom detached residence situated on the world renowned Wentworth Estate. This wonderful family home boasts over 6100 Sq Ft of internal accommodation arranged over three floors.",
+			"location":"Heath Rise, Wentworth Estate, GU25",
+			"picture":"/assets/prop7pic1small.jpeg",
+			"url":"properties/prop7.html",
+            "added": {
+                "month":"June",
+                "day":25,
                 "year":2024
             }
         }
