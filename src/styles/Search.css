@@ -1,11 +1,20 @@
-/* Page container - add this to ensure proper centering */
 .search-container {
     min-height: calc(100vh - 64px); /* Adjust 64px to match your navbar height */
     display: flex;
+    flex-direction: column; /* Stack elements vertically */
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    background: url('/src/assets/real-estate-hero-bg-two.jpg') no-repeat center center/cover;  
+    background: url('/src/assets/real-estate-hero-bg-two.jpg') no-repeat center center/cover;
+}
+
+.search-container h2 {
+    color: #086cf9;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.8rem; /* Space between the heading and form */
+    text-align: center;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); Add text shadow for better contrast */
 }
 
 /* Main form container */
