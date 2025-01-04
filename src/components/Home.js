@@ -22,11 +22,6 @@ const Home = () => {
                     Discover properties that suit your requirements and connect with agents easily.
                 </p>
                 <div className="search-actions">
-                    <input 
-                        type="text" 
-                        className="search-input" 
-                        placeholder="Search for properties..."
-                    />
                     <button className="search-button" onClick={() => navigate('/search')}>
                         Search Now
                     </button>
