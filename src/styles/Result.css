@@ -299,3 +299,52 @@
     background-color: #ef4444;
     color: white;
 }
+
+.property-card {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.property-image {
+    position: relative;
+}
+
+.view-details {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.property-card:hover .view-details {
+    opacity: 1;
+}
+
+/* Ensure the favorite button doesn't trigger the card click */
+.favorite-btn {
+    z-index: 2;
+}
+
+/* Update dragging styles to maintain functionality */
+.property-card.dragging {
+    cursor: grabbing;
+    opacity: 0.5;
+}
+
+.property-card.dragging .view-details {
+    display: none;
+}
