@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Heart, HeartOff, Star, Trash2 } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Heart, HeartOff, Star, Trash2, ExternalLink } from 'lucide-react';
 import '../styles/Result.css';
 
 const Result = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const results = location.state?.results || [];
     const [favorites, setFavorites] = useState([]);
     const [showFavorites, setShowFavorites] = useState(false);
     const [draggedProperty, setDraggedProperty] = useState(null);
 
+    // Previous useEffects and functions remain the same...
     useEffect(() => {
         const savedFavorites = localStorage.getItem('propertyFavorites');
         if (savedFavorites) {
@@ -21,7 +23,8 @@ const Result = () => {
         localStorage.setItem('propertyFavorites', JSON.stringify(favorites));
     }, [favorites]);
 
-    const toggleFavorite = (property) => {
+    const toggleFavorite = (e, property) => {
+        e.stopPropagation(); // Prevent triggering the card click when clicking the favorite button
         setFavorites(prevFavorites => {
             const propertyExists = prevFavorites.some(fav => fav.id === property.id);
             if (propertyExists) {
@@ -38,11 +41,13 @@ const Result = () => {
     };
 
     const handleDragStart = (e, property) => {
+        e.stopPropagation(); // Prevent navigation when starting to drag
         setDraggedProperty(property);
         e.dataTransfer.setData('text/plain', property.id);
         e.currentTarget.classList.add('dragging');
     };
 
+    // Previous drag and drop handlers remain the same...
     const handleDragEnd = (e) => {
         e.currentTarget.classList.remove('dragging');
         setDraggedProperty(null);
@@ -71,6 +76,14 @@ const Result = () => {
         }
     };
 
+    // New function to handle property card clicks
+    const handlePropertyClick = (property) => {
+        if (property.url) {
+            window.open(property.url, '_blank'); // Opens in a new tab
+        }
+    };
+
+    // Previous formatting functions remain the same...
     const formatPrice = (price) => {
         return new Intl.NumberFormat('en-GB', {
             style: 'currency',
@@ -89,6 +102,7 @@ const Result = () => {
 
     return (
         <div className="results-container">
+            {/* Header section remains the same */}
             <div className="results-header-container">
                 <h2 className="results-header">
                     {showFavorites ? 'Favorite Properties' : 'Search Results'}
@@ -134,6 +148,7 @@ const Result = () => {
                         <div 
                             key={property.id} 
                             className="property-card"
+                            onClick={() => handlePropertyClick(property)}
                             draggable
                             onDragStart={(e) => handleDragStart(e, property)}
                             onDragEnd={handleDragEnd}
@@ -148,11 +163,17 @@ const Result = () => {
                                 />
                                 <button 
                                     className={`favorite-btn ${favorites.some(fav => fav.id === property.id) ? 'favorited' : ''}`}
-                                    onClick={() => toggleFavorite(property)}
+                                    onClick={(e) => toggleFavorite(e, property)}
                                     aria-label={favorites.some(fav => fav.id === property.id) ? 'Remove from favorites' : 'Add to favorites'}
                                 >
                                     <Star size={24} />
                                 </button>
+                                {property.url && (
+                                    <div className="view-details">
+                                        <ExternalLink size={20} />
+                                        Click to view details
+                                    </div>
+                                )}
                             </div>
                             <div className="property-details">
                                 <h4 className="property-type">{property.type}</h4>
