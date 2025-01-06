@@ -15,7 +15,7 @@ function Navbar() {
         <nav className="navbar">
             <div className="navbar-container">
                 <div className="navbar-logo">
-                    <a href="Home.js">
+                    <a href="/" onClick={() => navigate('/')}>
                         <img src={NestHubLogo1} alt="NestHub Logo" />
                     </a>
                 </div>
