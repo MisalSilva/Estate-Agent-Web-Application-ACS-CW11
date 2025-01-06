@@ -145,7 +145,7 @@ body {
 }
 
 .right-arrow {
-    right: 440px;
+    right: 140px;
 }
 
 
@@ -157,8 +157,8 @@ body {
 }
 
 .header-icons {
+    gap: 900px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
 }
