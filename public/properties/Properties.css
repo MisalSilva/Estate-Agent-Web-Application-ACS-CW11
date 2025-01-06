@@ -205,7 +205,7 @@ body {
 
 .icons-info i {
     font-size: 1.2rem;
-    color: #0078d7;
+    color: #002884;
 }
 
 /* Description */
@@ -249,7 +249,7 @@ body {
     padding: 8px 15px;
     background-color: #f0f4f9;
     border-radius: 5px;
-    color: #555;
+    color: #002884;
     font-size: 0.9rem;
     display: flex;
     align-items: center;
