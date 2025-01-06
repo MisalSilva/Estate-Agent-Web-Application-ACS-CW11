@@ -6,6 +6,17 @@
     justify-content: center;
     padding: 2rem;
     background: url('/src/assets/real-estate-hero-bg-two.jpg') no-repeat center center/cover;
+    animation: slideInContent 0.5s ease-out forwards;
+}
+@keyframes slideInContent {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .search-container h2 {
