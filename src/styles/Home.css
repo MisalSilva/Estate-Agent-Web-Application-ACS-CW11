@@ -13,9 +13,17 @@
     padding: 10px;
     box-sizing: border-box;
     overflow: hidden;
-
-    /* Add padding to account for the fixed navbar height */
-    padding-top: 30px; /* Adjust based on your navbar height */
+    padding-top: 30px; 
+    background-position: -100% center;
+    animation: slideInBackground 0.6s ease-in-out forwards;
+}
+@keyframes slideInBackground {
+    0% {
+        background-position: -300% center;
+    }
+    100% {
+        background-position: center center;
+    }
 }
 
 /* Home content styling */
@@ -31,7 +39,7 @@
 }
 
 .home-content h1 {
-    color: #335ff3;
+    color: #ffffff;
     font-size: 3rem;
     margin-bottom: 20px;
     text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
