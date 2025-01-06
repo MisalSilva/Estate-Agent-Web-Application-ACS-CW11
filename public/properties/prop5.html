@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NestHub - Property 5</title>
+    <link rel="stylesheet" href="Properties.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="/">
+                <img src="../assets/NestHubLogo1.png" alt="NestHub Logo" />
+            </a>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/search">Search Properties</a></li>
+        </ul>
+    </nav>
+
+    <div class="property-container">
+        
+        <!-- Property Images Section -->
+        <div class="property-images">
+            <div class="image-gallery">
+                <!-- Main Display Photo -->
+                <div class="main-image-container">
+                    <img id="main-photo" src="../assets/prop2pic1small.jpeg" alt="Property Image 1">
+                </div>
+            
+                <!-- Thumbnail Photos -->
+                <div class="thumbnails">
+                    <div class="thumbnail" data-image="../assets/prop2pic1small.jpeg">
+                        <img src="../assets/prop2pic1small.jpeg" alt="Thumbnail 1">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic2.jpeg">
+                        <img src="../assets/prop2pic2.jpeg" alt="Thumbnail 2">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic3.jpeg">
+                        <img src="../assets/prop2pic3.jpeg" alt="Thumbnail 3">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic4.jpeg">
+                        <img src="../assets/prop2pic4.jpeg" alt="Thumbnail 4">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic5.jpeg">
+                        <img src="../assets/prop2pic5.jpeg" alt="Thumbnail 5">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic6.jpeg">
+                        <img src="../assets/prop2pic6.jpeg" alt="Thumbnail 6">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic7.jpeg">
+                        <img src="../assets/prop2pic7.jpeg" alt="Thumbnail 7">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic8.jpeg">
+                        <img src="../assets/prop2pic8.jpeg" alt="Thumbnail 8">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic9.jpeg">
+                        <img src="../assets/prop2pic9.jpeg" alt="Thumbnail 9">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic10.jpeg">
+                        <img src="../assets/prop2pic10.jpeg" alt="Thumbnail 10">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic11.jpeg">
+                        <img src="../assets/prop2pic11.jpeg" alt="Thumbnail 11">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic12.jpeg">
+                        <img src="../assets/prop2pic12.jpeg" alt="Thumbnail 12">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic13.jpeg">
+                        <img src="../assets/prop2pic13.jpeg" alt="Thumbnail 13">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic14.jpeg">
+                        <img src="../assets/prop2pic14.jpeg" alt="Thumbnail 14">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic15.jpeg">
+                        <img src="../assets/prop2pic15.jpeg" alt="Thumbnail 15">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic16.jpeg">
+                        <img src="../assets/prop2pic16.jpeg" alt="Thumbnail 16">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop2pic17.jpeg">
+                        <img src="../assets/prop2pic17.jpeg" alt="Thumbnail 17">
+                    </div>
+                </div>
+            </div>
+            
+        
+            <!-- Navigation Buttons -->
+            <button class="arrow-btn left-arrow" id="prev-photo"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow-btn right-arrow" id="next-photo"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        
+
+        <!-- Property Details Section -->
+        <div class="property-details">
+            <h1>Crofton Road Orpington BR6</h1>
+            <div class="header-icons">
+                <p class="price">£399,995</p>
+                <button class="icon-btn share"><i class="fas fa-share"></i> Share</button>
+            </div>
+            <div class="icons-info">
+                <div><i class="fas fa-bed"></i> 2 Bedrooms</div>
+                <div><i class="fas fa-bath"></i> 2 Bathrooms</div>
+                <div><i class="fas fa-ruler-combined"></i> 2,798 sq ft</div>
+                <div><i class="fas fa-home"></i> Freehold</div>
+            </div>
+            <p class="description">
+                A beautifully presented and spacious five bedroom detached family home with many period features whilst also enabling modern living through sympathetic extensions and thoughtful modernisations and situated in a sought after residential area.
+                <span id="full-description" class="hidden"> 
+                    jdm are delighted to offer to the market this beautifully presented and spacious five bedroom detached family home situated in one of the most sought after residential areas. Built in the 1930s, the property has many period features whilst also enabling modern living through sympathetic extensions and thoughtful modernisations.
+                    <br>
+                    The property is ideal for families, with ample accommodation, as well as having access to highly regarded schools which include Crofton Primary and Darrick Wood and also being convenient for Orpington and Petts Wood mainline stations. Orpington station offers a fast service to London Bridge in approximately 18 minutes.
+                </span>
+            </p>
+            <button id="view-more-btn" class="view-more">View More</button>
+
+            <!-- Features Section -->
+            <ul class="features">
+                <li>Sought after residential area</li>
+                <li>Ensuite to main bedroom</li>
+                <li>Detached double garage and off-street parking</li>
+                <li>Beautifully modernised with period features</li>
+            </ul>
+            <button class="call-agent">Call Agent</button>
+            <p class="added-date">Added: September 14, 2022</p>
+        </div>
+
+        <!-- Map Section -->
+        <div class="property-map">
+            <h2>Location</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1736136837628!6m8!1m7!1sg9kP4U_GTIDNzHAhoSaGQQ!2m2!1d51.38123015812504!2d0.08235390265952934!3f149.24696891470123!4f-8.05994915995231!5f0.7820865974627469" 
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- SwiperJS Library -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const mainPhoto = document.getElementById('main-photo');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const prevPhoto = document.getElementById('prev-photo');
+        const nextPhoto = document.getElementById('next-photo');
+
+        let currentIndex = 0;
+
+        // Update Main Photo
+        const updateMainPhoto = (index) => {
+            const selectedThumbnail = thumbnails[index];
+            const newImage = selectedThumbnail.getAttribute('data-image');
+            mainPhoto.src = newImage;
+
+            // Highlight Active Thumbnail
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === index);
+            });
+        };
+
+        // Thumbnail Click Event
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                currentIndex = index;
+                updateMainPhoto(index);
+            });
+        });
+
+        // Arrow Navigation
+        prevPhoto.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+            updateMainPhoto(currentIndex);
+        });
+
+        nextPhoto.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % thumbnails.length;
+            updateMainPhoto(currentIndex);
+        });
+
+        // Initialize with First Image
+        updateMainPhoto(currentIndex);
+
+
+
+        document.getElementById('view-more-btn').addEventListener('click', function () {
+        const fullDescription = document.getElementById('full-description');
+        if (fullDescription.classList.contains('hidden')) {
+            fullDescription.classList.remove('hidden');
+            this.textContent = 'View Less';
+        } else {
+            fullDescription.classList.add('hidden');
+            this.textContent = 'View More';
+        }
+    });
+    </script>
+</body>
+</html>
