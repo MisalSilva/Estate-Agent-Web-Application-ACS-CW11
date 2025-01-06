@@ -11,7 +11,7 @@ const Result = () => {
     const [showFavorites, setShowFavorites] = useState(false);
     const [draggedProperty, setDraggedProperty] = useState(null);
 
-    // Previous useEffects and functions remain the same...
+    
     useEffect(() => {
         const savedFavorites = localStorage.getItem('propertyFavorites');
         if (savedFavorites) {
