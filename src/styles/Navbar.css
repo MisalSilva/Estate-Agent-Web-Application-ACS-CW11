@@ -1,81 +1,83 @@
 .navbar {
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-    padding: 10px 0px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-  }
-  
-  .navbar-logo img {
-    height: 80px; /* Adjust the height as needed */
-    width: auto; /* Maintain aspect ratio */
-  }
-  
-  .navbar-links {
-    padding-left: 450px;
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navbar-links a {
-    color: rgb(1, 28, 107);
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  .navbar-links a:hover {
-    text-decoration: underline;
-  }
-  .login-register-buttons {
-    display: flex;
-    gap: 10px;
-    margin-left: auto; /* Push to the right */
-  }
-  /* Shared styles for login and register buttons */
-.login, 
-.register {
-    color: #fff;
-    text-align: center;
-    padding: 10px 30px;
-    margin: 0 10px; /* Add spacing between buttons */
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    background: linear-gradient(45deg, #2f035f, #036c72);
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    display: inline-block;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 0;
 }
 
-/* Hover effect for buttons */
-.login:hover, 
-.register:hover {
-    background: linear-gradient(45deg, #036c72, #2f035f);
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
-/* Focus effect for better accessibility */
-.login:focus, 
-.register:focus {
-    outline: 3px solid rgba(3, 108, 114, 0.5);
-    outline-offset: 4px;
+.navbar-logo img {
+  height: 60px; /* Adjust the height as needed */
+  width: auto; /* Maintain aspect ratio */
 }
 
-/* Adjusting for responsiveness */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  color: rgb(1, 28, 107);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgb(1, 28, 107);
+}
+
+.navbar-toggle-icon {
+  font-size: 24px;
+}
+
+/* Hide navbar links initially for small screens */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links-active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
 @media (max-width: 768px) {
-    .login, 
-    .register {
-        width: 100%;
-        padding: 12px;
-        margin: 10px 0;
-    }
+  .navbar-links {
+      display: none;
+      gap: 10px;
+  }
+
+  .navbar-toggle {
+      display: block;
+  }
+
+  .navbar-links-active {
+      display: flex;
+  }
 }
