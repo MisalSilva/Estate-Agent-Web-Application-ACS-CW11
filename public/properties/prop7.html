@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NestHub - Property 7</title>
+    <link rel="stylesheet" href="Properties.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="/">
+                <img src="../assets/NestHubLogo1.png" alt="NestHub Logo" />
+            </a>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/search">Search Properties</a></li>
+        </ul>
+    </nav>
+
+    <div class="property-container">
+        
+        <!-- Property Images Section -->
+        <div class="property-images">
+            <div class="image-gallery">
+                <!-- Main Display Photo -->
+                <div class="main-image-container">
+                    <img id="main-photo" src="../assets/prop7pic1small.jpeg" alt="Property Image 1">
+                </div>
+            
+                <!-- Thumbnail Photos -->
+                <div class="thumbnails">
+                    <div class="thumbnail" data-image="../assets/prop7pic1small.jpeg">
+                        <img src="../assets/prop7pic1small.jpeg" alt="Thumbnail 1">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop7pic2.jpeg">
+                        <img src="../assets/prop7pic2.jpeg" alt="Thumbnail 2">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop7pic3.jpeg">
+                        <img src="../assets/prop7pic3.jpeg" alt="Thumbnail 3">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop7pic4.jpeg">
+                        <img src="../assets/prop7pic4.jpeg" alt="Thumbnail 4">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop7pic5.jpeg">
+                        <img src="../assets/prop7pic5.jpeg" alt="Thumbnail 5">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop7pic6.jpeg">
+                        <img src="../assets/prop7pic6.jpeg" alt="Thumbnail 6">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop7pic7.jpeg">
+                        <img src="../assets/prop7pic7.jpeg" alt="Thumbnail 7">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop7pic8.jpeg">
+                        <img src="../assets/prop7pic8.jpeg" alt="Thumbnail 8">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop7pic9.jpeg">
+                        <img src="../assets/prop7pic9.jpeg" alt="Thumbnail 9">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop7pic10.jpeg">
+                        <img src="../assets/prop7pic10.jpeg" alt="Thumbnail 10">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop7pic11.jpeg">
+                        <img src="../assets/prop7pic11.jpeg" alt="Thumbnail 11">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop7pic12.jpeg">
+                        <img src="../assets/prop7pic12.jpeg" alt="Thumbnail 12">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop7pic13.jpeg">
+                        <img src="../assets/prop7pic13.jpeg" alt="Thumbnail 13">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/prop7pic14.jpeg">
+                        <img src="../assets/prop7pic14.jpeg" alt="Thumbnail 14">
+                    </div>
+                </div>
+            </div>
+            
+        
+            <!-- Navigation Buttons -->
+            <button class="arrow-btn left-arrow" id="prev-photo"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow-btn right-arrow" id="next-photo"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        
+
+        <!-- Property Details Section -->
+        <div class="property-details">
+            <h1>Heath Rise, Wentworth Estate, GU25</h1>
+            <div class="header-icons">
+                <p class="price">£3,395,000</p>
+                <button class="icon-btn share"><i class="fas fa-share"></i> Share</button>
+            </div>
+            <div class="icons-info">
+                <div><i class="fas fa-bed"></i> 6 Bedrooms</div>
+                <div><i class="fas fa-bath"></i> 5 Bathrooms</div>
+                <div><i class="fas fa-ruler-combined"></i> 6,198 sq ft</div>
+                <div><i class="fas fa-home"></i> Freehold</div>
+            </div>
+            <p class="description">
+                A superb six bedroom detached residence situated on the world renowned Wentworth Estate. This wonderful family home boasts over 6100 Sq Ft of internal accommodation arranged over three floors. Upon entering the home you are greeted by a grand entrance hall that provides access to a vast drawing room to the right, a large fully integrated kitchen/breakfast room to the left and a dining room leading to a family room/conservatory straight ahead. 
+                <span id="full-description" class="hidden"> 
+                    On the first floor there is gorgeous galleried landing along with a principal bedroom complete with dressing area, en-suite bathroom with separate shower and a private balcony as well as three further well proportioned en-suite bedrooms with one benefiting from a private balcony. Additionally there is a spacious games room with toilet which could be utilised as a gym/cinema room. The top floor hosts two further large double bedrooms with a modern family bathroom.
+                    <br>
+                    The home further benefits from a utility room, downstairs W.C and ample storage space throughout. Outside you will find a triple garage and private landscaped gardens, all accessed via secure electric gates to the front of the large sweeping driveway.
+                </span>
+            </p>
+            <button id="view-more-btn" class="view-more">View More</button>
+
+            <!-- Features Section -->
+            <ul class="features">
+                <li>Three Reception Rooms</li>
+                <li>Landscaped Gardens</li>
+                <li>Games Room</li>
+                <li>Triple Garage</li>
+                <li>Secure Electric Gates</li>
+            </ul>
+            <button class="call-agent">Call Agent</button>
+            <p class="added-date">Added: June 25, 2024</p>
+        </div>
+
+        <!-- Map Section -->
+        <div class="property-map">
+            <h2>Location</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1736136837628!6m8!1m7!1sg9kP4U_GTIDNzHAhoSaGQQ!2m2!1d51.38123015812504!2d0.08235390265952934!3f149.24696891470123!4f-8.05994915995231!5f0.7820865974627469" 
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- SwiperJS Library -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const mainPhoto = document.getElementById('main-photo');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const prevPhoto = document.getElementById('prev-photo');
+        const nextPhoto = document.getElementById('next-photo');
+
+        let currentIndex = 0;
+
+        // Update Main Photo
+        const updateMainPhoto = (index) => {
+            const selectedThumbnail = thumbnails[index];
+            const newImage = selectedThumbnail.getAttribute('data-image');
+            mainPhoto.src = newImage;
+
+            // Highlight Active Thumbnail
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === index);
+            });
+        };
+
+        // Thumbnail Click Event
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                currentIndex = index;
+                updateMainPhoto(index);
+            });
+        });
+
+        // Arrow Navigation
+        prevPhoto.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+            updateMainPhoto(currentIndex);
+        });
+
+        nextPhoto.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % thumbnails.length;
+            updateMainPhoto(currentIndex);
+        });
+
+        // Initialize with First Image
+        updateMainPhoto(currentIndex);
+
+
+
+        document.getElementById('view-more-btn').addEventListener('click', function () {
+        const fullDescription = document.getElementById('full-description');
+        if (fullDescription.classList.contains('hidden')) {
+            fullDescription.classList.remove('hidden');
+            this.textContent = 'View Less';
+        } else {
+            fullDescription.classList.add('hidden');
+            this.textContent = 'View More';
+        }
+    });
+    </script>
+</body>
+</html>
