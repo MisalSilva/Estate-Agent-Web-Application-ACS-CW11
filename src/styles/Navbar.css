@@ -4,7 +4,7 @@
   position: fixed;
   width: 100%;
   z-index: 1000;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 
 .navbar-container {
@@ -15,7 +15,7 @@
 }
 
 .navbar-logo img {
-  height: 60px; /* Adjust the height as needed */
+  height: 65px; /* Adjust the height as needed */
   width: auto; /* Maintain aspect ratio */
 }
 
