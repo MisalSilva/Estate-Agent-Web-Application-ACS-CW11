@@ -9,17 +9,16 @@ const Home = () => {
         <div className="home">
             <div className="home-content">
                 <h1>Welcome to <span className="highlight">NestHub</span></h1>
-                <p>
-                    Simplify your estate management with transparency, speed , and accuracy.
-                </p>
+                <h3>Your Personal Estate Agent</h3>
+                <p>Simplify your Estate management with NESTHUB and find your Dream Property.</p>
                 <button className="explore-button" onClick={() => navigate('/search')}>
                     Explore Now
                 </button>
             </div>
             <div className="search-content">
-                <h2>Find Your Ideal Property</h2>
+                <h2>Find Your Dream Property</h2>
                 <p>
-                    Discover properties that suit your requirements and connect with agents easily.
+                    Discover properties that matches your requirements and connect with agents easily.
                 </p>
                 <div className="search-actions">
                     <button className="search-button" onClick={() => navigate('/search')}>
