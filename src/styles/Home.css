@@ -13,6 +13,9 @@
     padding: 10px;
     box-sizing: border-box;
     overflow: hidden;
+
+    /* Add padding to account for the fixed navbar height */
+    padding-top: 30px; /* Adjust based on your navbar height */
 }
 
 /* Home content styling */
@@ -28,9 +31,16 @@
 }
 
 .home-content h1 {
+    color: #335ff3;
     font-size: 3rem;
     margin-bottom: 20px;
     text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.home-content h3 {
+    color: #335ff3;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.496);
 }
 
 .home-content .highlight {
@@ -65,9 +75,9 @@
     margin-top: 50px;
     max-width: 700px;
     padding: 90px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 154, 2, 0.153);
     border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 30px rgba(255, 15, 15, 0.15);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(10px);
     text-align: center;
