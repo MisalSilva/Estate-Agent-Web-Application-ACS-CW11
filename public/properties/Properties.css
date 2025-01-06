@@ -190,10 +190,9 @@ body {
 
 .icons-info {
     display: flex;
-    /* justify-content: space-between; */
     margin: 15px 0;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 70px;
 }
 
 .icons-info div {
