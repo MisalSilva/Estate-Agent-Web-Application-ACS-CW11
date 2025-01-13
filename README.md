@@ -21,7 +21,6 @@ Welcome to **NestHub - Real Estate Property Search Application** – a modern, r
 ---
 
 ## 🚀 Live Demo  
-
 ---
 
 ## 🛠️ Tech Stack  
